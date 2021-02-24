@@ -11,14 +11,20 @@
       </ul>
     </div>
     <div class="rightNavbar pr-3">
-      <div><a href="">Logout</a></div>
+      <div @click.prevent="logout"><a href="">Logout</a></div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  methods: {
+    logout () {
+      localStorage.clear()
+      this.$router.push('/login')
+    }
+  }
 }
 </script>
 

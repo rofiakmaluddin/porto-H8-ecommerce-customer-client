@@ -1,7 +1,6 @@
 <template>
-  <div class="home">
+  <div class="wishlist">
     <Navbar />
-    <Banner />
     <ListContainer />
   </div>
 </template>
@@ -9,20 +8,18 @@
 <script>
 // @ is an alias to /src
 import Navbar from '@/components/Navbar'
-import Banner from '@/components/Banner'
 import ListContainer from '@/components/ListContainer'
 export default {
-  name: 'Home',
+  name: 'Wishlist',
   components: {
     Navbar,
-    Banner,
     ListContainer
   }
 }
 </script>
 
 <style>
-  .home{
+  .wishlist{
     height: 100%;
     width: 100%;
   }
