@@ -1,25 +1,25 @@
 <template>
-  <div class="wishlist">
+  <div class="cart">
     <Navbar />
-    <ListContainerWishlist />
+    <ListContainerCart />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Navbar from '@/components/Navbar'
-import ListContainerWishlist from '@/components/ListContainerWishlist'
+import ListContainerCart from '@/components/ListContainerCart'
 export default {
-  name: 'Wishlist',
+  name: 'Cart',
   components: {
     Navbar,
-    ListContainerWishlist
+    ListContainerCart
   }
 }
 </script>
 
 <style>
-  .wishlist{
+  .cart{
     height: 100%;
     width: 100%;
   }

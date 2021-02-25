@@ -1,13 +1,13 @@
 <template>
   <div class="navbar">
     <div class="leftNavbar pr-0 pt-2 pb-2 pl-3">
-      <a href="">
+      <a @click.prevent="goToHome" href="">
         <img src="../assets/Store-Logo.png" alt="store logo">
       </a>
     </div>
     <div class="centerNavbar">
       <ul class="p-0 mr-3 mb-0">
-        <li><a href="">Wishlist</a></li> | <li><a href="">Cart</a></li> | <li><a href="">History</a></li>
+        <li @click.prevent="goToWishlist"><a href="">Wishlist</a></li> | <li><a @click.prevent="goToCart" href="">Cart</a></li> | <li><a href="">History</a></li>
       </ul>
     </div>
     <div class="rightNavbar pr-3">
@@ -23,6 +23,15 @@ export default {
     logout () {
       localStorage.clear()
       this.$router.push('/login')
+    },
+    goToWishlist () {
+      this.$router.push('/wishlist')
+    },
+    goToCart () {
+      this.$router.push('/cart')
+    },
+    goToHome () {
+      this.$router.push('/')
     }
   }
 }

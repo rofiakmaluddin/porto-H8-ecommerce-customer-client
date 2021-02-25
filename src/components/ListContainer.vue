@@ -19,6 +19,6 @@ export default {
 <style>
   .listContainer{
     display: flex;
-    height: 700px;
+    height: 640px;
   }
 </style>

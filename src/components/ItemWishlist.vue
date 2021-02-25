@@ -1,14 +1,14 @@
 <template>
   <div class="items p-3">
-    <Card />
+    <CardWishlist />
   </div>
 </template>
 
 <script>
-import Card from '@/components/Card'
+import CardWishlist from '@/components/CardWishlist'
 export default {
   components: {
-    Card
+    CardWishlist
   }
 }
 </script>
