@@ -288,6 +288,19 @@ export default new Vuex.Store({
       }).catch(err => {
         console.log(err)
       })
+    },
+    removeWishlist ({ commit }, payload) {
+      axios({
+        method: 'DELETE',
+        url: `wishlists/${payload}`,
+        headers: {
+          access_token: localStorage.getItem('access_token')
+        }
+      }).then(({ data }) => {
+        console.log(data)
+      }).catch(err => {
+        console.log(err)
+      })
     }
   },
   modules: {

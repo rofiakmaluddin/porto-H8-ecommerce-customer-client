@@ -14,6 +14,7 @@
           <div class="m-1">Stock : {{ product.Product.stock }}</div>
         </div>
         <a href="#" class="btn btn-primary">Add to Cart</a>
+        <a @click.prevent="removeWishlist(product.id)" href="#" class="btn btn-danger">Remove</a>
       </div>
     </div>
   </div>
@@ -28,6 +29,12 @@ export default {
   },
   created () {
     this.$store.dispatch('fetchAllProductInWishlist', false)
+  },
+  methods: {
+    removeWishlist (id) {
+      this.$store.dispatch('removeWishlist', id)
+      this.$store.dispatch('fetchAllProductInWishlist', false)
+    }
   }
 }
 </script>
