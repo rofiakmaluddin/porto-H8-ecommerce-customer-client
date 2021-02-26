@@ -13,7 +13,7 @@
           <b>{{ product.Product.price }}</b>
           <div class="m-1">Stock : {{ product.Product.stock }}</div>
         </div>
-        <a href="#" class="btn btn-primary">Add to Cart</a>
+        <a @click.prevent="addToCart(product.Product.id)" href="#" class="btn btn-primary">Add to Cart</a>
         <a @click.prevent="removeWishlist(product.id)" href="#" class="btn btn-danger">Remove</a>
       </div>
     </div>
@@ -31,6 +31,10 @@ export default {
     this.$store.dispatch('fetchAllProductInWishlist', false)
   },
   methods: {
+    addToCart (ProductId) {
+      this.$store.dispatch('addProductToCart', ProductId)
+      this.$store.dispatch('fetchAllProduct', false)
+    },
     removeWishlist (id) {
       this.$store.dispatch('removeWishlist', id)
       this.$store.dispatch('fetchAllProductInWishlist', false)
